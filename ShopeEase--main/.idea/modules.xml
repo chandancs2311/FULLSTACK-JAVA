@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+<<<<<<< HEAD
+      <module fileurl="file://$PROJECT_DIR$/.idea/ShopeEase--main.iml" filepath="$PROJECT_DIR$/.idea/ShopeEase--main.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/.idea/ShopEase.iml" filepath="$PROJECT_DIR$/.idea/ShopEase.iml" />
+>>>>>>> 2c85b1f16306897fdb5ee5ddc637d0b73e74ddd0
+    </modules>
+  </component>
+</project>

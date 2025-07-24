@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+<<<<<<< HEAD
+        <option value="$PROJECT_DIR$/ShopeEase--main/ShopEase/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="ms-17" project-jdk-type="JavaSDK">
+=======
+        <option value="$PROJECT_DIR$/ShopEase/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" project-jdk-name="openjdk-24 (6)" project-jdk-type="JavaSDK">
+>>>>>>> 2c85b1f16306897fdb5ee5ddc637d0b73e74ddd0
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

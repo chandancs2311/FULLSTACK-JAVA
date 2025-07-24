@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ShopEase - Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+<div class="main-container">
+    <div class="login-box">
+        <!-- Left Side: Form and Logo -->
+        <div class="left-side">
+            <h1>Welcome to ShopEase</h1>
+            <img src="images/userlogo.jpg" alt="User Logo" class="user-logo">
+
+            <!-- Add inside <form> -->
+            <form id="loginForm">
+                <input type="text" class="input-box username" placeholder="Email" required />
+                <input type="password" class="input-box password" placeholder="Password" required />
+                <button type="submit" class="login-btn">Login</button>
+            </form>
+            <p >Don't have an account? <a href="register.html" class="reg">Register here</a></p>
+            <!-- At the end of <body> -->
+            <script src="auth.js"></script>
+            <script>
+                document.getElementById("loginForm").addEventListener("submit", loginUser);
+            </script>
+
+        </div>
+
+        <!-- Right Side: Background Image -->
+        <div class="right-side"></div>
+    </div>
+</div>
+<script src="auth.js"></script>
+<script>
+    document.getElementById("loginForm").addEventListener("submit", loginUser);
+</script>
+</body>
+</html>

@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>ShopEase - Products</title>
+    <link rel="stylesheet" href="product.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<header class="navbar">
+    <h2>ShopEase</h2>
+    <nav>
+        <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="cart.html" class="fa fa-shopping-cart" style="font-size:19px" > Cart</a></li>
+            <li><a href="order.html">Cart History</a></li>
+            <li><a href="#" id="logoutBtn">Logout</a></li>
+        </ul>
+    </nav>
+</header>
+
+
+
+<div id="product-container" class="product-container">
+
+
+    <!-- 1. Grocery -->
+    <div id="grocery" class="category-box">
+        <h2>Grocery</h2>
+        <div class="product-list">
+            <div class="product-card">
+                <img src="images/products/img1.jpg" alt="Rice Bag" />
+                <h3>Rice Bag 5kg</h3>
+                <p>Long grain rice</p>
+                <p class="price">₹250.00</p>
+                <label for="quantity-1">Qty:</label>
+                <input type="number" id="quantity-1" class="quantity-input" min="1" value="1" />
+                <button class="addToCartBtn" id="addToCartBtn-1">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/products/img2.jpg" alt="Wheat" />
+                <h3>Wheat Flour 2kg</h3>
+                <p>Whole wheat flour</p>
+                <p class="price">₹120.00</p>
+                <label for="quantity-2">Qty:</label>
+                <input type="number" id="quantity-2" class="quantity-input" min="1" value="1" />
+                <button class="addToCartBtn" id="addToCartBtn-2">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/products/img3.jpg" alt="Oil" />
+                <h3>Cooking Oil 1L</h3>
+                <p>Sunflower oil</p>
+                <p class="price">₹110.00</p>
+                <label for="quantity-3">Qty:</label>
+                <input type="number" id="quantity-3" class="quantity-input" min="1" value="1" />
+                <button class="addToCartBtn" id="addToCartBtn-3">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/products/img4.jpg" alt="Dal" />
+                <h3>Toor Dal 1kg</h3>
+                <p>Protein-rich lentils</p>
+                <p class="price">₹145.00</p>
+                <label for="quantity-4">Qty:</label>
+                <input type="number" id="quantity-4" class="quantity-input" min="1" value="1" />
+                <button class="addToCartBtn" id="addToCartBtn-4">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/products/img5.jpg" alt="Sugar" />
+                <h3>Sugar 1kg</h3>
+                <p>Refined white sugar</p>
+                <p class="price">₹48.00</p>
+                <label for="quantity-5">Qty:</label>
+                <input type="number" id="quantity-5" class="quantity-input" min="1" value="1" />
+                <button class="addToCartBtn" id="addToCartBtn-5">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. Mobiles -->
+    <div id="mobiles" class="category-box">
+        <h2>Mobiles</h2>
+        <div class="product-list">
+            <div class="product-card">
+                <img src="images/products/img6.jpg" alt="Basic Phone" />
+                <h3>Basic Phone</h3>
+                <p>Simple keypad phone</p>
+                <p class="price">₹999.00</p>
+                <label for="quantity-6">Qty:</label>
+                <input type="number" id="quantity-6" class="quantity-input" min="1" value="1" />
+                <button class="addToCartBtn" id="addToCartBtn-6">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/products/img7.jpg" alt="Budget Android" />
+                <h3>Budget Android</h3>
+                <p>Affordable 4G smartphone</p>
+                <p class="price">₹7499.00</p>
+                <label for="quantity-7">Qty:</label>
+                <input type="number" id="quantity-7" class="quantity-input" min="1" value="1" />
+                <button class="addToCartBtn" id="addToCartBtn-7">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/products/img8.jpg" alt="Large Display" />
+                <h3>Large Display Phone</h3>
+                <p>6.5-inch screen smartphone</p>
+                <p class="price">₹8999.00</p>
+                <label for="quantity-8">Qty:</label>
+                <input type="number" id="quantity-8" class="quantity-input" min="1" value="1" />
+                <button class="addToCartBtn" id="addToCartBtn-8">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/products/img9.jpg" alt="Camera Phone" />
+                <h3>Camera Phone</h3>
+                <p>High-resolution camera phone</p>
+                <p class="price">₹10999.00</p>
+                <label for="quantity-9">Qty:</label>
+                <input type="number" id="quantity-9" class="quantity-input" min="1" value="1" />
+                <button class="addToCartBtn" id="addToCartBtn-9">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/products/img10.jpg" alt="Dual SIM" />
+                <h3>Dual SIM Phone</h3>
+                <p>Supports dual SIM cards</p>
+                <p class="price">₹1999.00</p>
+                <label for="quantity-10">Qty:</label>
+                <input type="number" id="quantity-10" class="quantity-input" min="1" value="1" />
+                <button class="addToCartBtn" id="addToCartBtn-10">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. Fashion -->
+    <div id="fashion" class="category-box">
+        <h2>Fashion</h2>
+        <div class="product-list">
+            <div class="product-card">
+                <img src="images/products/img11.jpg" alt="T-Shirt" />
+                <h3>Casual T-Shirt</h3>
+                <p>Comfortable cotton t-shirt</p>
+                <p class="price">₹399.00</p>
+                <label for="quantity-11">Qty:</label>
+                <input type="number" id="quantity-11" class="quantity-input" min="1" value="1" />
+                <button class="addToCartBtn" id="addToCartBtn-11">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/products/img12.jpg" alt="Jeans" />
+                <h3>Denim Jeans</h3>
+                <p>Slim-fit jeans</p>
+                <p class="price">₹799.00</p>
+                <label for="quantity-12">Qty:</label>
+                <input type="number" id="quantity-12" class="quantity-input" min="1" value="1" />
+                <button class="addToCartBtn" id="addToCartBtn-12">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/products/img13.jpg" alt="Kurti" />
+                <h3>Kurti Set</h3>
+                <p>Ethnic wear for women</p>
+                <p class="price">₹999.00</p>
+                <label for="quantity-13">Qty:</label>
+                <input type="number" id="quantity-13" class="quantity-input" min="1" value="1" />
+                <button class="addToCartBtn" id="addToCartBtn-13">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/products/img14.jpg" alt="Formal Shirt" />
+                <h3>Formal Shirt</h3>
+                <p>Office wear shirt</p>
+                <p class="price">₹699.00</p>
+                <label for="quantity-14">Qty:</label>
+                <input type="number" id="quantity-14" class="quantity-input" min="1" value="1" />
+                <button class="addToCartBtn" id="addToCartBtn-14">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/products/img15%20(2).jpg" alt="Kids Dress" />
+                <h3>Kids Dress</h3>
+                <p>Colorful frock for kids</p>
+                <p class="price">₹549.00</p>
+                <label for="quantity-15">Qty:</label>
+                <input type="number" id="quantity-15" class="quantity-input" min="1" value="1" />
+                <button class="addToCartBtn" id="addToCartBtn-15">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. Electronics -->
+    <div id="electronics" class="category-box">
+        <h2>Electronics</h2>
+        <div class="product-list">
+            <div class="product-card">
+                <img src="images/products/img16.jpg" alt="Headphones" />
+                <h3>Bluetooth Headphones</h3>
+                <p>Wireless headphones with mic</p>
+                <p class="price">₹1299.00</p>
+                <label for="quantity-16">Qty:</label>
+                <input type="number" id="quantity-16" class="quantity-input" min="1" value="1" />
+                <button class="addToCartBtn" id="addToCartBtn-16">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/products/img17.jpg" alt="Powerbank" />
+                <h3>Power Bank</h3>
+                <p>10000mAh portable charger</p>
+                <p class="price">₹999.00</p>
+                <label for="quantity-17">Qty:</label>
+                <input type="number" id="quantity-17" class="quantity-input" min="1" value="1" />
+                <button class="addToCartBtn" id="addToCartBtn-17">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/products/img18.jpg" alt="Mouse" />
+                <h3>Computer Mouse</h3>
+                <p>Wired optical mouse</p>
+                <p class="price">₹299.00</p>
+                <label for="quantity-18">Qty:</label>
+                <input type="number" id="quantity-18" class="quantity-input" min="1" value="1" />
+                <button class="addToCartBtn" id="addToCartBtn-18">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/products/img19.jpg" alt="Smart Bulb" />
+                <h3>Smart Bulb</h3>
+                <p>WiFi enabled LED bulb</p>
+                <p class="price">₹699.00</p>
+                <label for="quantity-19">Qty:</label>
+                <input type="number" id="quantity-19" class="quantity-input" min="1" value="1" />
+                <button class="addToCartBtn" id="addToCartBtn-19">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/products/img20.jpg" alt="Tablet" />
+                <h3>Tablet</h3>
+                <p>7-inch Android tablet</p>
+                <p class="price">₹4999.00</p>
+                <label for="quantity-20">Qty:</label>
+                <input type="number" id="quantity-20" class="quantity-input" min="1" value="1" />
+                <button class="addToCartBtn" id="addToCartBtn-20">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. Home & Furniture -->
+    <div id="home" class="category-box">
+        <h2>Home & Furniture</h2>
+        <div class="product-list">
+            <div class="product-card">
+                <img src="images/products/img21.jpg" alt="Chair" />
+                <h3>Plastic Chair</h3>
+                <p>Durable plastic chair</p>
+                <p class="price">₹450.00</p>
+                <label for="quantity-21">Qty:</label>
+                <input type="number" id="quantity-21" class="quantity-input" min="1" value="1" />
+                <button class="addToCartBtn" id="addToCartBtn-21">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/products/img22.jpg" alt="Foldable Table" />
+                <h3>Foldable Table</h3>
+                <p>Space-saving table</p>
+                <p class="price">₹1450.00</p>
+                <label for="quantity-22">Qty:</label>
+                <input type="number" id="quantity-22" class="quantity-input" min="1" value="1" />
+                <button class="addToCartBtn" id="addToCartBtn-22">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/products/img23.jpg" alt="Shoe Rack" />
+                <h3>Shoe Rack</h3>
+                <p>Compact rack for shoes</p>
+                <p class="price">₹1200.00</p>
+                <label for="quantity-23">Qty:</label>
+                <input type="number" id="quantity-23" class="quantity-input" min="1" value="1" />
+                <button class="addToCartBtn" id="addToCartBtn-23">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/products/img24.jpg" alt="Shelf" />
+                <h3>Wall Shelf</h3>
+                <p>Decorative wall-mounted shelf</p>
+                <p class="price">₹799.00</p>
+                <label for="quantity-24">Qty:</label>
+                <input type="number" id="quantity-24" class="quantity-input" min="1" value="1" />
+                <button class="addToCartBtn" id="addToCartBtn-24">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/products/img25.jpg" alt="Bedsheet" />
+                <h3>Bed Sheet Set</h3>
+                <p>Double bed sheet set</p>
+                <p class="price">₹699.00</p>
+                <label for="quantity-25">Qty:</label>
+                <input type="number" id="quantity-25" class="quantity-input" min="1" value="1" />
+                <button class="addToCartBtn" id="addToCartBtn-25">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 6. Appliances -->
+    <div id="appliances" class="category-box">
+        <h2>Appliances</h2>
+        <div class="product-list">
+            <div class="product-card">
+                <img src="images/products/img26%20(2).jpg" alt="Kettle" />
+                <h3>Electric Kettle</h3>
+                <p>1.5L stainless steel kettle</p>
+                <p class="price">₹799.00</p>
+                <label for="quantity-26">Qty:</label>
+                <input type="number" id="quantity-26" class="quantity-input" min="1" value="1" />
+                <button class="addToCartBtn" id="addToCartBtn-26">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/products/img27.jpg" alt="Mixer Grinder" />
+                <h3>Mixer Grinder</h3>
+                <p>Multi-speed 3-jar mixer</p>
+                <p class="price">₹2499.00</p>
+                <label for="quantity-27">Qty:</label>
+                <input type="number" id="quantity-27" class="quantity-input" min="1" value="1" />
+                <button class="addToCartBtn" id="addToCartBtn-27">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/products/28.png" alt="Fan" />
+                <h3>Ceiling Fan</h3>
+                <p>Energy-efficient fan</p>
+                <p class="price">₹1599.00</p>
+                <label for="quantity-28">Qty:</label>
+                <input type="number" id="quantity-28" class="quantity-input" min="1" value="1" />
+                <button class="addToCartBtn" id="addToCartBtn-28">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/products/img29.jpg" alt="Iron" />
+                <h3>Iron Box</h3>
+                <p>Non-stick dry iron</p>
+                <p class="price">₹499.00</p>
+                <label for="quantity-29">Qty:</label>
+                <input type="number" id="quantity-29" class="quantity-input" min="1" value="1" />
+                <button class="addToCartBtn" id="addToCartBtn-29">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/products/img30.jpg" alt="Toaster" />
+                <h3>Toaster</h3>
+                <p>2-slice pop-up toaster</p>
+                <p class="price">₹1099.00</p>
+                <label for="quantity-30">Qty:</label>
+                <input type="number" id="quantity-30" class="quantity-input" min="1" value="1" />
+                <button class="addToCartBtn" id="addToCartBtn-30">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 7. Beauty, Toys & More -->
+    <div id="toys" class="category-box">
+        <h2>Beauty, Toys & More</h2>
+        <div class="product-list">
+            <div class="product-card">
+                <img src="images/products/img31.jpg" alt="Toy Train" />
+                <h3>Toy Train Set</h3>
+                <p>Battery-operated toy train</p>
+                <p class="price">₹699.00</p>
+                <label for="quantity-31">Qty:</label>
+                <input type="number" id="quantity-31" class="quantity-input" min="1" value="1" />
+                <button class="addToCartBtn" id="addToCartBtn-31">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/products/img32.jpg" alt="Teddy Bear" />
+                <h3>Teddy Bear</h3>
+                <p>Soft plush teddy bear</p>
+                <p class="price">₹499.00</p>
+                <label for="quantity-32">Qty:</label>
+                <input type="number" id="quantity-32" class="quantity-input" min="1" value="1" />
+                <button class="addToCartBtn" id="addToCartBtn-32">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/products/img33.jpg" alt="Face Wash" />
+                <h3>Face Wash</h3>
+                <p>Aloe vera face wash</p>
+                <p class="price">₹120.00</p>
+                <label for="quantity-33">Qty:</label>
+                <input type="number" id="quantity-33" class="quantity-input" min="1" value="1" />
+                <button class="addToCartBtn" id="addToCartBtn-33">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/products/img34.jpg" alt="Lip Balm" />
+                <h3>Lip Balm Pack</h3>
+                <p>Pack of 2 lip balms</p>
+                <p class="price">₹99.00</p>
+                <label for="quantity-34">Qty:</label>
+                <input type="number" id="quantity-34" class="quantity-input" min="1" value="1" />
+                <button class="addToCartBtn" id="addToCartBtn-34">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/products/img35.jpg" alt="Blocks" />
+                <h3>Building Blocks</h3>
+                <p>60 colorful blocks</p>
+                <p class="price">₹349.00</p>
+                <label for="quantity-35">Qty:</label>
+                <input type="number" id="quantity-35" class="quantity-input" min="1" value="1" />
+                <button class="addToCartBtn" id="addToCartBtn-35">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 8. Two Wheelers -->
+    <div id="vehicles" class="category-box">
+        <h2>Two Wheelers</h2>
+        <div class="product-list">
+            <div class="product-card">
+                <img src="images/products/img36.jpg" alt="E-Scooter" />
+                <h3>Electric Scooter</h3>
+                <p>Battery-powered e-scooter</p>
+                <p class="price">₹45000.00</p>
+                <label for="quantity-36">Qty:</label>
+                <input type="number" id="quantity-36" class="quantity-input" min="1" value="1" />
+                <button class="addToCartBtn" id="addToCartBtn-36">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/products/img37.jpg" alt="Gearless Bike" />
+                <h3>Gearless Bike</h3>
+                <p>Scooter for city ride</p>
+                <p class="price">₹55000.00</p>
+                <label for="quantity-37">Qty:</label>
+                <input type="number" id="quantity-37" class="quantity-input" min="1" value="1" />
+                <button class="addToCartBtn" id="addToCartBtn-37">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/products/img38.jpg" alt="Kids Cycle" />
+                <h3>Kids Bicycle</h3>
+                <p>14-inch cycle with training wheels</p>
+                <p class="price">₹3499.00</p>
+                <label for="quantity-38">Qty:</label>
+                <input type="number" id="quantity-38" class="quantity-input" min="1" value="1" />
+                <button class="addToCartBtn" id="addToCartBtn-38">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/products/img39.jpg" alt="Mountain Cycle" />
+                <h3>Mountain Bicycle</h3>
+                <p>Off-road geared cycle</p>
+                <p class="price">₹8999.00</p>
+                <label for="quantity-39">Qty:</label>
+                <input type="number" id="quantity-39" class="quantity-input" min="1" value="1" />
+                <button class="addToCartBtn" id="addToCartBtn-39">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/products/img40.jpg" alt="Helmet" />
+                <h3>Helmet</h3>
+                <p>ISI-certified helmet</p>
+                <p class="price">₹799.00</p>
+                <label for="quantity-40">Qty:</label>
+                <input type="number" id="quantity-40" class="quantity-input" min="1" value="1" />
+                <button class="addToCartBtn" id="addToCartBtn-40">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script src="product.js">
+
+</script>
+</body>
+</html>

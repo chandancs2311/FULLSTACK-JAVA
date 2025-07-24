@@ -1,0 +1,109 @@
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #007bff,#56DEF1,#6EA1C6,#BFE4FF);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* Main box with two divisions */
+.login-box {
+  display: flex;
+  width: 800px;
+  height: 500px;
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Left side (form + logo) */
+.left-side {
+  flex: 4;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.left-side h1 {
+  color: #007bff;
+  margin-bottom: 20px;
+}
+
+.user-logo {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 30px;
+}
+
+/* Input Fields */
+.input-box {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+/* Login Button */
+.login-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Register link */
+.register-link {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.register-link a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+/* Right side: background image */
+.right-side {
+  flex: 5;
+  background-image: url("images/login2.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.reg {
+  color: #007bff; /* Shopease blue */
+  text-decoration: none;
+  font-weight: bold;
+  margin-left: 5px;
+  transition: color 0.3s;
+  gap:10px;
+
+}
+
+.reg:hover {
+  color: #0056b3; /* Darker blue on hover */
+  text-decoration: underline;
+}

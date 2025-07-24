@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Cart - ShopEase</title>
+    <link rel="stylesheet" href="cart.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body onload="loadCart()"><!-- Navbar -->
+<header class="navbar">
+    <h2>ShopEase</h2>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="cart.html" class="fa fa-shopping-cart" style="font-size:19px" > Cart</a></li>
+            <li><a href="order.html">Order  History</a></li>
+            <li><a href="#" id="logoutBtn">Logout</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="container" id="cart-container">
+
+    <!-- Left Side: Total Box -->
+    <div class="cart-total-box">
+        <h2>Your Cart</h2>
+        <h3>Total: <span id="grandTotal">₹0.00</span></h3>
+        <div class="checkout-form">
+            <label for="shippingAddress">Shipping Address:</label>
+            <textarea id="shippingAddress" placeholder="Enter your address"></textarea>
+
+            <div class="actions">
+                <button onclick="placeOrder()" class="btn">Place Order</button>
+                <button onclick="goToOrders()" class="btn">View Order History</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Right Side: Cart Items -->
+    <div class="cart-items-grid" id="cartItems">
+        <!-- JS will populate product cards here -->
+    </div>
+</section>
+
+
+<script src="cart.js"></script>
+<script src="order.js"></script>
+
+</body>
+</html>

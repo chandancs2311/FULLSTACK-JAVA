@@ -1,0 +1,117 @@
+/* ===== Base Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body, html {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* ===== Gradient Background (new look) ===== */
+body {
+  background: linear-gradient(120deg, #4e54c8, #8f94fb);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* Optional: Four image background boxes (dimmed) */
+.bg-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+}
+
+.bg-box {
+background-size: 100% 100%;       /* Ensures full fit without crop */
+  background-position: cover;
+  background-repeat: no-repeat;     /* Avoid image tiling */
+  filter: brightness(1);
+}
+
+.bg1 { background-image: url("images/bg2.jpg"); }
+.bg2 { background-image: url("images/bg1.jpg"); }
+.bg3 { background-image: url("images/login2.jpg"); }
+.bg4 { background-image: url("images/bg3.jpg"); }
+
+/* ===== Register Box ===== */
+.register-container {
+  position: relative;
+  z-index: 2;
+  width: 340px;
+
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(100px);
+  border-radius: 16px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  color: white;
+}
+
+.register-container h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.user-logo {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 25px;
+}
+
+/* ===== Form Styling ===== */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+form input {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #333;
+}
+
+form button {
+  padding: 12px;
+  background-color: #00c6ff;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+form button:hover {
+  background-color: #009fe3;
+}
+
+/* Login link */
+.login-link {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.login-link a {
+  color: #fff;
+  text-decoration: underline;
+}
