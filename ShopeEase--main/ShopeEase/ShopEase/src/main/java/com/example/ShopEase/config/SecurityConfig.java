@@ -42,9 +42,11 @@ public class SecurityConfig {
                         .requestMatchers("/api/user/products/**").hasAnyAuthority("ROLE_USER", "ROLE_ADMIN")
                         .requestMatchers("/api/user/categories/**").hasAnyAuthority("ROLE_USER", "ROLE_ADMIN")
 
-                        // Orders
-                        .requestMatchers("/api/user/orders/**").hasAnyAuthority("ROLE_USER", "ROLE_ADMIN")
-                        .requestMatchers("/api/admin/orders/**").hasAuthority("ROLE_ADMIN")
+                        //orders
+                     //   .requestMatchers("/api/user/orders/**").hasAnyAuthority("ROLE_USER", "ROLE_ADMIN")
+                      // .requestMatchers("/api/admin/orders/**").hasAuthority("ROLE_ADMIN")
+                        .requestMatchers("/api/user/orders/**").permitAll()
+
 
                         // Cart
                         //.requestMatchers("/api/user/cart/**").hasAnyAuthority("ROLE_USER", "ROLE_ADMIN")

@@ -1,6 +1,7 @@
 package com.example.ShopEase.controller;
 
 import com.example.ShopEase.config.JwtUtil;
+import com.example.ShopEase.dto.AdminUserCartOrderDTO;
 import com.example.ShopEase.model.Cart;
 import com.example.ShopEase.model.User;
 import com.example.ShopEase.service.CartService;
@@ -116,10 +117,16 @@ public class UserController {
             return ResponseEntity.status(403).body("Access Denied: Not an Admin");
         }
 
+        // Get all users with their cart and order info as DTOs
+        List<AdminUserCartOrderDTO> userSummaries = userService.getAllUsersWithCartAndOrders();
+
         Map<String, Object> response = new HashMap<>();
-        response.put("admin", admin);
-        response.put("allUsers", userService.getAllUsers());
+        response.put("adminId", admin.getId());
+        response.put("adminName", admin.getName());
+        response.put("adminEmail", admin.getEmail());
+        response.put("allUsers", userSummaries);
 
         return ResponseEntity.ok(response);
     }
+
 }

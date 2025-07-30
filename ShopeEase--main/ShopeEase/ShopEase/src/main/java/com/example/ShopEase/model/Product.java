@@ -18,11 +18,14 @@ public class Product {
 
     private String name;
     private String description;
+
+    @Column(precision = 10, scale = 2)
     private BigDecimal price;
+
     private String imageUrl;
-    private String stock;
+    private int stock;
+
     @ManyToOne
     @JoinColumn(name = "category_id")
     private ProductCategory category;
 }
-

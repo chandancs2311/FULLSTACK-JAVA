@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - ShopEase</title>
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+<div class="profile-container">
+    <!-- Left Side: Profile Picture -->
+    <div class="profile-left">
+        <div class="profile-img-wrapper">
+            <img src="images/bg1.jpg" alt="Profile Picture" class="profile-img" id="profileImage">
+            <label for="uploadImage" class="edit-btn">
+                <img src="images/editicon.png" alt="Edit">
+            </label>
+            <input type="file" id="uploadImage" accept="image/*" style="display: none;">
+        </div>
+    </div>
+
+    <!-- Right Side: User Info -->
+    <div class="profile-right">
+        <h2>User Profile</h2>
+        <form id="profileForm">
+            <div class="form-group">
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" name="fullName" placeholder="Enter your name" disabled>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" disabled>
+            </div>
+
+            <div class="form-group">
+                <label for="role">Role</label>
+                <input type="text" id="role" name="role" disabled>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="text" id="phone" name="phone" placeholder="Enter phone number">
+            </div>
+
+            <div class="form-group">
+                <label for="address">Address</label>
+                <textarea id="address" name="address" rows="3" placeholder="Enter address"></textarea>
+            </div>
+
+            <button type="submit" class="btn">Save Changes</button>
+        </form>
+    </div>
+</div>
+
+<script src="profile.js">
+    // Handle Profile Picture Upload
+    const uploadImage = document.getElementById('uploadImage');
+    const profileImage = document.getElementById('profileImage');
+
+    uploadImage.addEventListener('change', function() {
+        const file = this.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                profileImage.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+</script>
+</body>
+</html>

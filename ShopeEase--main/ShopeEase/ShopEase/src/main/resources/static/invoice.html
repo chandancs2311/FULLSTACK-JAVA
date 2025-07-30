@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Admin - All Invoices</title>
+
+    <style>
+        .admin-invoice-container {
+          max-width: 900px;
+          margin: 30px auto;
+          padding: 20px;
+          background-color:#BFBFBF;
+          border: 1px solid #ccc;
+          border-radius: 12px;
+          align-items : centre;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .invoice-box {
+          border: 1px solid #ddd;
+          padding: 16px;
+          text-align: centre
+          border-radius: 20px;
+          margin-bottom: 20px;
+          background-color: #E0E0E0;
+        }
+
+        .invoice-header {
+          margin-bottom: 12px;
+        }
+
+        .invoice-header p {
+          margin: 4px 0;
+        }
+
+        table {
+          width: 100%;
+          border-collapse: collapse;
+        }
+
+        th, td {
+          padding: 8px;
+          text-align: left;
+          border-bottom: 1px solid #e0e0e0;
+        }
+
+        th {
+          background-color: #f4f4f4;
+        }
+
+        .total {
+          text-align: right;
+          font-weight: bold;
+          margin-top: 10px;
+        }
+    </style>
+</head>
+<body onload="loadAllInvoices()">
+<div class="admin-invoice-container">
+    <h2>All User Invoices (Admin View)</h2>
+    <div id="adminInvoices"></div>
+</div>
+
+<script src="invoice.js"></script>
+</body>
+</html>

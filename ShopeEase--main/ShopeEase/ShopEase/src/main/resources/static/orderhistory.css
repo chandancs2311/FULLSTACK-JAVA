@@ -1,0 +1,41 @@
+.order-card {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 15px;
+
+  margin-bottom: 20px;
+  background: #fdfdfd;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+.h2{
+color: white;
+background: #5490C7;
+padding:20px;
+margin:0;
+text-align: centre;
+}
+.order-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 10px;
+  align-items: centre;
+}
+
+.order-item {
+  display: flex;
+  gap: 10px;
+  background: #fff;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 280px;
+
+}
+
+.product-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 6px;
+  object-fit: cover;
+}

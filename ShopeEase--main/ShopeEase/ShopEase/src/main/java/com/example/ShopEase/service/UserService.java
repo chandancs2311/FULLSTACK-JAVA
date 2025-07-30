@@ -1,14 +1,21 @@
 package com.example.ShopEase.service;
 
 import com.example.ShopEase.config.JwtUtil;
+import com.example.ShopEase.dto.AdminUserCartOrderDTO;
+import com.example.ShopEase.dto.CartDTO;
+import com.example.ShopEase.dto.CartItemDTO;
+import com.example.ShopEase.dto.OrderItemDTO;
 import com.example.ShopEase.model.Cart;
+import com.example.ShopEase.model.OrderItem;
 import com.example.ShopEase.model.User;
 import com.example.ShopEase.repository.CartRepository;
+import com.example.ShopEase.repository.OrderItemRepository;
 import com.example.ShopEase.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.util.*;
 
 @Service
@@ -18,27 +25,26 @@ public class UserService {
     private final UserRepository userRepository;
     private final CartRepository cartRepository;
     private final JwtUtil jwtUtil;
-    private final PasswordEncoder passwordEncoder;
 
+    private final PasswordEncoder passwordEncoder;
+    private final OrderItemRepository orderItemRepository;
+    CartDTO cartDTO = new CartDTO();
     // Register new user
     public User register(User user) {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
 
-        // Ensure correct role
         if (user.getRole() == null || user.getRole().isEmpty()) {
             user.setRole("ROLE_USER");
         } else if (!user.getRole().startsWith("ROLE_")) {
             user.setRole("ROLE_" + user.getRole().toUpperCase());
         }
 
-        // 1. Save user first
         User savedUser = userRepository.save(user);
 
-        // 2. Create cart for the user
         Cart cart = new Cart();
-        cart.setUser(savedUser); // assuming cart has @OneToOne User
+        cart.setUser(savedUser);
         cart.setCreatedAt(new Date());
-        cartRepository.save(cart); // cart is now linked to the user
+        cartRepository.save(cart);
 
         return savedUser;
     }
@@ -84,4 +90,53 @@ public class UserService {
     public User save(User user) {
         return userRepository.save(user);
     }
+
+    //  ADMIN: Get all users' cart and order data
+    public List<AdminUserCartOrderDTO> getAllUsersWithCartAndOrders() {
+        List<User> users = userRepository.findAll();
+        List<AdminUserCartOrderDTO> result = new ArrayList<>();
+
+        for (User user : users) {
+            AdminUserCartOrderDTO dto = new AdminUserCartOrderDTO();
+            dto.setUserName(user.getName());
+            dto.setUserId(user.getId());
+            dto.setEmail(user.getEmail());
+
+            //  Cart items
+            List<CartItemDTO> cartItems = new ArrayList<>();
+            if (user.getCart() != null && user.getCart().getCartItems() != null) {
+                user.getCart().getCartItems().forEach(item -> {
+                    CartItemDTO cartItem = new CartItemDTO();
+                    cartItem.setUserId(user.getId());
+                    cartItem.setProductId(item.getProduct().getId());
+                    cartItem.setProductName(item.getProduct().getName());
+                    cartItem.setQuantity(item.getQuantity());
+                    cartItem.setPricePerUnit(item.getPrice());
+                    cartItem.setTotalItemPrice(item.getTotalPrice());
+                    cartItems.add(cartItem);
+                });
+            }
+
+            //  Order items
+            List<OrderItemDTO> orderItems = new ArrayList<>();
+            List<OrderItem> items = orderItemRepository.findByOrder_UserId(user.getId());
+
+            items.forEach(item -> {
+                OrderItemDTO orderItem = new OrderItemDTO();
+                orderItem.setProductName(item.getProduct().getName());
+                orderItem.setQuantity(item.getQuantity());
+                orderItem.setPrice(item.getPrice());
+                orderItem.setTotalPrice(item.getTotalPrice());
+                orderItems.add(orderItem);
+            });
+
+            dto.setCartItems(cartItems);
+            dto.setOrderItems(orderItems);
+            result.add(dto);
+        }
+
+        return result;
+    }
+
 }
+

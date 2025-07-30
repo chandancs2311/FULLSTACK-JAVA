@@ -44,6 +44,8 @@ public class CartServiceImpl implements CartService {
             cartItem.setProduct(product);
             cartItem.setQuantity(request.getQuantity());
         }
+        cartItem.setPrice(product.getPrice());
+        cartItem.setTotalPrice(product.getPrice().multiply(BigDecimal.valueOf(cartItem.getQuantity())));
 
         CartItem savedItem = cartItemRepository.save(cartItem);
 
@@ -69,8 +71,9 @@ public class CartServiceImpl implements CartService {
 
     @Override
     public List<CartItem> getCartItemsByUserAndCartId(Long userId, Long cartId) {
-        return cartItemRepository.findByCart_UserIdAndCartId(userId, cartId);
+        return cartItemRepository.findByCart_User_IdAndCart_Id(userId, cartId);
     }
+
 
 
     @Override

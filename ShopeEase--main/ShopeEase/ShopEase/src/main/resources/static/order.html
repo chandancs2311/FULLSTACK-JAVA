@@ -1,41 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Order History - ShopEase</title>
-    <link rel="stylesheet" href="order.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8" />
+    <title>Invoice - ShopEase</title>
+    <link rel="stylesheet" href="order.css" />
 </head>
-<body onload="loadOrderHistory()">
+<body onload="loadUserInvoice()">
 
-<!-- Navbar -->
 <header class="navbar">
     <h2>ShopEase</h2>
     <nav>
         <ul>
-            <li><a href="#">About</a></li>
+            <li><a href="#">Home</a></li>
             <li><a href="#">Contact</a></li>
-            <li><a href="cart.html" class="fa fa-shopping-cart" style="font-size:19px" > Cart</a></li>
-            <li><a href="order.html">Order History</a></li>
+            <li><a href="cart.html" class="fa fa-shopping-cart" style="font-size:19px"> Cart</a></li>
+            <li><a href="orderhistory.html">Order History</a></li>
             <li><a href="#" id="logoutBtn">Logout</a></li>
         </ul>
     </nav>
 </header>
 
-
-<main class="container">
-    <h2>Your Order History</h2>
-    <div id="orderHistory" class="order-list">
-        <!-- Orders will be dynamically inserted here -->
+<section class="container">
+    <h2>Your Invoice</h2>
+    <div id="invoiceContent">
+        Loading invoice...
     </div>
-</main>
-
+    <button onclick="downloadPDF()">Download Invoice as PDF</button>
+</section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 <script src="order.js"></script>
-<script>
-    function logout() {
-        localStorage.removeItem("token");
-        window.location.href = "login.html";
-    }
-</script>
 </body>
 </html>

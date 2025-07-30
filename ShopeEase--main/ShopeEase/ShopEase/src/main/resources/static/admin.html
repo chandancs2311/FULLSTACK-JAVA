@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ShopEase - Home</title>
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<!-- Box 1: Navbar -->
+<!-- Navbar -->
+<header class="navbar">
+    <h2>ShopEase(Admin)</h2>
+    <nav>
+        <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="cart.html" class="fa fa-shopping-cart" style="font-size:19px" > Cart</a></li>
+            <li><a href="userdetails.html">user details</a></li>
+            <li><a href="invoice.html">Invoice</a> </li>
+            <li><a href="#" id="logoutBtn">Logout</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Category Box -->
+<section class="category-box">
+
+    <div class="category-row" id="categoryRow">
+        <!-- Filled by JS -->
+    </div>
+</section>
+
+
+<!-- Box 3: Image Slider -->
+<section class="slider-box">
+    <div class="slider" id="imageSlider">
+        <img src="images/salehome1.jpg" alt="Banner 1">
+        <img src="images/salehome2.jpg" alt="Banner 2">
+        <img src="images/salehome3.jpg" alt="Banner 3">
+
+        <span class="slider-arrow left" onclick="changeSlide(-1)">&#10094;</span>
+        <span class="slider-arrow right" onclick="changeSlide(1)">&#10095;</span>
+    </div>
+    <div class="slider-dots" id="dotsContainer"></div>
+</section>
+<script src="home.js"></script>
+</body>
+</html>

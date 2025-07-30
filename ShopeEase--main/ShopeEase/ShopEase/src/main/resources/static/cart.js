@@ -11,6 +11,16 @@ function requireAuth() {
   }
   return { token, userId: parseInt(userId, 10) };
 }
+//go to cart history
+function goToOrders() {
+  const token = sessionStorage.getItem("token");
+  if (!token) {
+    alert("Please login first.");
+    window.location.href = "login.html";
+    return;
+  }
+  window.location.href = "orderhistory.html";
+}
 
 /**
  * Load the cart from backend and render it.
@@ -47,9 +57,8 @@ async function loadCart() {
   }
 }
 
-/**
- * Renders the cart items into the DOM and shows the total price.
- */
+
+ // Renders the cart items into the DOM and shows the total price.
 function renderCart(items, userId) {
   const container = document.getElementById("cartItems");
   const totalEl = document.getElementById("grandTotal");
@@ -180,6 +189,55 @@ async function clearCart() {
     alert("Failed to clear cart.");
   }
 }
+async function placeOrder() {
+    const auth = requireAuth();
+    if (!auth) return;
+    const { token } = auth;
+
+    const shippingAddress = document.getElementById("shippingAddress").value.trim();
+    if (!shippingAddress) {
+        alert("Please enter a shipping address.");
+        return;
+    }
+
+    try {
+        const response = await fetch("http://localhost:8080/api/user/orders/place", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${token}`
+            },
+            body: JSON.stringify({ shippingAddress })
+        });
+
+        if (!response.ok) {
+            const text = await response.text();
+            throw new Error(`Order placement failed: ${response.status} - ${text}`);
+        }
+
+        const data = await response.json();
+        console.log("Order placed:", data);
+        alert("Order placed successfully!");
+        loadCart(); // Reload cart after placing order
+    } catch (error) {
+        console.error("Error placing order:", error);
+        alert("Failed to place order. Please try again.");
+    }
+}
+function goToOrders() {
+  const userId = sessionStorage.getItem("userId");
+  if (!userId) {
+    alert("User ID missing!");
+    return;
+  }
+
+  window.location.href = "order.html";
+}
+
+// Expose to global scope
+window.placeOrder = placeOrder;
+
+
 
 // Expose for inline onclick handlers in HTML
 window.loadCart = loadCart;
