@@ -22,7 +22,6 @@ public class Product {
     @Column(precision = 10, scale = 2)
     private BigDecimal price;
 
-    private String imageUrl;
     private int stock;
 
     @ManyToOne

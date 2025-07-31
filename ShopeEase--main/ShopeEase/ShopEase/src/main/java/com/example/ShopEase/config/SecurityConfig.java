@@ -41,6 +41,7 @@ public class SecurityConfig {
                         // Products and Categories
                         .requestMatchers("/api/user/products/**").hasAnyAuthority("ROLE_USER", "ROLE_ADMIN")
                         .requestMatchers("/api/user/categories/**").hasAnyAuthority("ROLE_USER", "ROLE_ADMIN")
+                        .requestMatchers("/api/product-images/**").permitAll()
 
                         //orders
                      //   .requestMatchers("/api/user/orders/**").hasAnyAuthority("ROLE_USER", "ROLE_ADMIN")

@@ -11,6 +11,39 @@ function requireAuth() {
   }
   return { token, userId: parseInt(userId, 10) };
 }
+//blob
+function bindAddToCartButtons() {
+  const auth = requireAuth();
+  if (!auth) return;
+
+  const { token, userId } = auth;
+
+  document.querySelectorAll("[id^='addToCartBtn-']").forEach(button => {
+    button.addEventListener("click", async () => {
+      const productId = parseInt(button.id.split("-")[1], 10);
+      const quantity = parseInt(document.getElementById(`quantity-${productId}`).value, 10);
+
+      try {
+        const res = await fetch(`${CART_API}/add`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${token}`
+          },
+          body: JSON.stringify({ userId, productId, quantity })
+        });
+
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.message || "Add to cart failed");
+        alert(data.message || "Added to cart");
+      } catch (err) {
+        console.error(err);
+        alert("Could not add to cart");
+      }
+    });
+  });
+}
+
 
 // ---------------------- ADD TO CART ----------------------
 document.addEventListener("DOMContentLoaded", () => {

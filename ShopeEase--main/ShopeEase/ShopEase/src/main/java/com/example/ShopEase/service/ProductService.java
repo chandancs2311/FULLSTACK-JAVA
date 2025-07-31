@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+
 @Data
 
 @Service
@@ -31,7 +32,6 @@ public class ProductService {
     public void delete(Long id) {
         productRepository.deleteById(id);
     }
-
 
     public List<Product> getByCategoryId(Long categoryId) {
         return productRepository.findByCategory_Id(categoryId);
