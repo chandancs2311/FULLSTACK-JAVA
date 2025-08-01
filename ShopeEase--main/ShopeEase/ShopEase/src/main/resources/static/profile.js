@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Fetch profile data
     async function fetchProfile() {
         try {
-            const token = localStorage.getItem('jwtToken');
+            const token = sessionStorage.getItem('jwtToken');
             const res = await fetch('/api/user/profile', {
                 headers: {
                     'Authorization': `Bearer ${token}`,
@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Save updated profile
     async function saveProfile() {
         try {
-            const token = localStorage.getItem('jwtToken');
+            const token = sessionStorage.getItem('jwtToken');
             const updatedData = {
                 phone: document.getElementById('phone').value,
                 address: document.getElementById('address').value

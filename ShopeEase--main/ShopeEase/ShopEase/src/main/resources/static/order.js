@@ -24,52 +24,49 @@ async function loadUserInvoice() {
 
     const invoice = await response.json();
 
+    // Get only the latest order (assumes the last item is the latest)
+    const latestOrder = invoice.orders[invoice.orders.length - 1];
+
     let html = `
       <div class="invoice-details">
         <p><strong>User ID:</strong> ${invoice.userId}</p>
         <p><strong>Customer:</strong> ${invoice.userName}</p>
         <p><strong>Grand Total:</strong> ₹${invoice.grandTotal}</p>
       </div>
+      <div class="order-box">
+        <h3>Order #${latestOrder.orderId}</h3>
+        <p><strong>Date:</strong> ${latestOrder.orderDate}</p>
+        <p><strong>Shipping Address:</strong> ${latestOrder.shippingAddress}</p>
+        <p><strong>Status:</strong> ${latestOrder.status}</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Qty</th>
+              <th>Price (₹)</th>
+              <th>Total (₹)</th>
+            </tr>
+          </thead>
+          <tbody>
     `;
 
-    invoice.orders.forEach(order => {
+    latestOrder.items.forEach(item => {
       html += `
-        <div class="order-box">
-          <h3>Order #${order.orderId}</h3>
-          <p><strong>Date:</strong> ${order.orderDate}</p>
-          <p><strong>Shipping Address:</strong> ${order.shippingAddress}</p>
-          <p><strong>Status:</strong> ${order.status}</p>
-          <table>
-            <thead>
-              <tr>
-                <th>Product</th>
-                <th>Qty</th>
-                <th>Price (₹)</th>
-                <th>Total (₹)</th>
-              </tr>
-            </thead>
-            <tbody>
-      `;
-
-      order.items.forEach(item => {
-        html += `
-          <tr>
-            <td>${item.productName}</td>
-            <td>${item.quantity}</td>
-            <td>${item.price}</td>
-            <td>${item.totalPrice}</td>
-          </tr>
-        `;
-      });
-
-      html += `
-            </tbody>
-          </table>
-          <p style="text-align:right;"><strong>Order Total:</strong> ₹${order.totalAmount}</p>
-        </div>
-        <hr />
+        <tr>
+          <td>${item.productName}</td>
+          <td>${item.quantity}</td>
+          <td>${item.price}</td>
+          <td>${item.totalPrice}</td>
+        </tr>
       `;
     });
+
+    html += `
+          </tbody>
+        </table>
+        <p style="text-align:right;"><strong>Order Total:</strong> ₹${latestOrder.totalAmount}</p>
+      </div>
+    `;
 
     document.getElementById("invoiceContent").innerHTML = html;
 
